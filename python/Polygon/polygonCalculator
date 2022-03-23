@@ -1,0 +1,78 @@
+from numpy import square
+
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def set_width(self, width):
+        self.width = width
+
+    def set_height(self,height):
+        self.height = height
+
+    def get_width(self):
+        return self.width
+
+    def get_height(self):
+        return self.height
+
+    def get_area(self):
+        return self.width * self.height
+
+    def get_perimeter(self):
+        return 2 * self.width + 2 * self.height
+
+    def get_diagonal(self):
+        return (self.width ** 2 + self.height ** 2) ** .5
+
+    def get_line(self):
+        return "*"+ (" "*(self.width - 2)) + "*"
+
+    def get_picture(self):
+        a =[]
+        a.append("*"*self.width)
+        a.extend([self.get_line() for i in range(0,(self.width-2))])
+        a.append("*"*self.width)
+        return "\n".join(a)
+
+
+    def get_amount_inside(self, a):
+        return floor((self.width / a.get_width()) * (self.height / a.get_height()))
+    
+    def __repr__(self):
+        return f"Rectangle(width={self.width}, height={self.height})"
+
+        
+    def __str__(self):
+        return f"Rectangle(width={self.width}, height={self.height})"
+
+    
+class Square(Rectangle):
+    def __init__(self,side):
+        super().__init__(side ,side)
+
+    def set_height(self, height):
+        super().set_width(height)
+        super().set_height(height)
+
+    def set_width(self, width):
+        super().set_height(width)
+        super().set_width(width)
+
+    def set_side(self, side):
+        self.set_width(side)
+        
+    def __repr__(self):
+        return f"Square(side={self.width})"
+
+    
+    def __str__(self):
+        return f"Square(side={self.width})"
+
+
+a = Square(10)
+
+## picture assertion not working but displays a correct big picture
+print(a.get_picture())

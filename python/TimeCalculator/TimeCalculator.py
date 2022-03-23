@@ -1,13 +1,4 @@
 from datetime import timedelta, datetime
-import string
-"""add_time("3:00 PM", "3:10")
-# Returns: 6:10 PM
-
-add_time("11:30 AM", "2:32", "Monday")
-# Returns: 2:02 PM, Monday
-
-"""
-
 
 
 daysOfTheWeek = {
@@ -43,4 +34,8 @@ def add_time(time,increase, day=""):
         stringTime += f" ({dayDifference} days later)"
 
     return stringTime
-print(add_time("11:30 AM", "2:32", "Monday"))
+
+
+
+
+print(add_time("11:30 AM", "100:00", "Monday"))

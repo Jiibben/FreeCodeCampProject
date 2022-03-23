@@ -88,4 +88,4 @@ def arithmetic_arranger(problems, showAnswer):
 
     return f'{createFirstLine(parsedData)}\n{createSecondLine(parsedData)}\n{createThirdLine(parsedData)}'
 
-print(arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True))
+print(arithmetic_arranger(["123 + 123", "2342 - 423", "324 + 9999", "4324 - 49"], True))
