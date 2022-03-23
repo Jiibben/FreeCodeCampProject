@@ -1,19 +1,3 @@
-
-# error :
-    # more than five problem
-
-    # only addition and substraction
-    # 4 digits max
-
-
-#formating :
-    #single space between the operator and the longest of the two operator 
-    #number right aligned
-    # four space between each problem
-    #dashes at the bottom (whole length)
-
-
-
 def calculateResult(tup):
     n1, n2, op = tup
     return eval(f'{n1}{op}{n2}')
