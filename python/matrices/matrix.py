@@ -5,8 +5,6 @@ class Matrix:
     def __init__(self, matrix):
         self.__matrix = matrix
 
-
-
     def getSize(self):
         """return size of matrix row col"""
         
@@ -48,11 +46,9 @@ class Matrix:
             row = self.getRow(x)
             newRow = []
             for y in range(0, otherMatrice.getNumberOfCol()):
-                col = otherMatrice.getCol(y)
-                res = 0;
+                col, res = otherMatrice.getCol(y), 0
                 for i in range(len(col)):
                     res += row[i] * col[i]
-
                 newRow.append(res);
             newMatrix.append(newRow)
 
@@ -72,7 +68,7 @@ class Matrix:
             newMatrix.append(newRow)
 
         return newMatrix
-            
+        
             
     def __determinant(self, matrix=None):
         det = 0
@@ -87,16 +83,15 @@ class Matrix:
             return (copied_matrix[0][0] * copied_matrix[1][1]) - (copied_matrix[0][1] * copied_matrix[1][0])
         
         for i in range(len(copied_matrix)):
-            det += copied_matrix[i][0] * self.determinant(self.__trimMatrix(i, 0, copied_matrix)) * math.pow(-1,i)
+            det += copied_matrix[i][0] * self.__determinant(self.__trimMatrix(i, 0, copied_matrix)) * math.pow(-1,i)
         
         return det
     
+
     def getDeterminant(self):
         return self.__determinant()
             
-m = Matrix([
-            [1,4],
-            [1,2]])
+m = Matrix([[1,4],[1,2]])
 
 a = Matrix([
     [1,1,3],
